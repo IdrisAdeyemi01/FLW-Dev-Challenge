@@ -54,4 +54,6 @@ The payments are authorized and everyone is happy.
 
 **Thanks to Flutterwave.**
 
+**NOTE: More work is ongoing for the completion of this project at the moment**
+
 
