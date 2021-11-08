@@ -24,24 +24,22 @@ class Product {
     this.returnPolicy,
     this.selections,
     this.shopName,
-    this.totalAmount=1,
+    this.totalAmount = 1,
   });
 
-  
+  // void increaseNumber() {
+  //   howMany++;
+  //   totalAmount = productPrice * howMany;
+  //   print('How many: ' + howMany.toString());
+  //   print('Total Amount: ' + totalAmount.toString());
+  // }
 
-  void increaseNumber() {
-    howMany++;
-    totalAmount = productPrice * howMany;
-    print('How many: ' + howMany.toString());
-    print('Total Amount: ' + totalAmount.toString());
-  }
-
-  void decreaseNumber() {
-    if (howMany >= 2) {
-      howMany--;
-      totalAmount = productPrice * howMany;
-      print(howMany);
-      print('Total Amount: ' + totalAmount.toString());
-    }
-  }
+  // void decreaseNumber() {
+  //   if (howMany >= 2) {
+  //     howMany--;
+  //     totalAmount = productPrice * howMany;
+  //     print(howMany);
+  //     print('Total Amount: ' + totalAmount.toString());
+  //   }
+  // }
 }

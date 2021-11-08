@@ -3,8 +3,8 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
 import 'package:jumga_flutterwave_project/components/all_banks.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -32,7 +32,7 @@ class _UseBankAccountState extends State<UseBankAccount> {
   String url = 'https://api.flutterwave.com/v3/charges?type=debit_ng_account';
   Future payWithBank() async {
     http.Response response = await http.post(
-      url,
+      Uri(path: url),
       body: jsonEncode({
         "tx_ref": "JMG - 001",
         "amount":
@@ -50,9 +50,7 @@ class _UseBankAccountState extends State<UseBankAccount> {
         'Content-Type': 'application/json'
       },
     );
-    if(response.statusCode == 200){
-      
-    }
+    if (response.statusCode == 200) {}
     print(response.body);
     print(response.statusCode);
   }

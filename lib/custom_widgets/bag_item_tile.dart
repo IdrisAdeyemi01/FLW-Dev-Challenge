@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/widgets/item_counter.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/item_counter.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:provider/provider.dart';
 

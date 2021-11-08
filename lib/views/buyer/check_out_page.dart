@@ -3,9 +3,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:jumga_flutterwave_project/models/buyers.dart';
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/screens/payment_screens/payment_method.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/views/payment_screens/payment_method.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
@@ -79,7 +79,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         TextFieldContainer(
                           hintText: 'Full Name',
                           onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersName(value);
+                            Provider.of<Buyer>(context, listen: false)
+                                .setBuyersName(value);
                           },
                         ),
                         Row(
@@ -90,24 +91,27 @@ class _CheckOutPageState extends State<CheckOutPage> {
                               textfieldWidth:
                                   MediaQuery.of(context).size.width * 0.40,
                               onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersCity(value);
-                          },
+                                Provider.of<Buyer>(context, listen: false)
+                                    .setBuyersCity(value);
+                              },
                             ),
                             // SizedBox(width: 20),
                             TextFieldContainer(
                               hintText: 'State',
                               textfieldWidth:
                                   MediaQuery.of(context).size.width * 0.40,
-                                  onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersState(value);
-                          },
+                              onChanged: (value) {
+                                Provider.of<Buyer>(context, listen: false)
+                                    .setBuyersState(value);
+                              },
                             ),
                           ],
                         ),
                         TextFieldContainer(
                           hintText: 'Country',
-                            onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersCountry(value);
+                          onChanged: (value) {
+                            Provider.of<Buyer>(context, listen: false)
+                                .setBuyersCountry(value);
                           },
                         ),
                         SizedBox(height: 40),
@@ -121,8 +125,9 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         ),
                         TextFieldContainer(
                           hintText: 'Address',
-                            onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersDeliveryAddress(value);
+                          onChanged: (value) {
+                            Provider.of<Buyer>(context, listen: false)
+                                .setBuyersDeliveryAddress(value);
                           },
                         ),
                         SizedBox(height: 40),
@@ -136,8 +141,9 @@ class _CheckOutPageState extends State<CheckOutPage> {
                         ),
                         TextFieldContainer(
                           hintText: 'Optional',
-                            onChanged: (value) {
-                            Provider.of<Buyer>(context, listen:false).setBuyersDeliveryNote(value);
+                          onChanged: (value) {
+                            Provider.of<Buyer>(context, listen: false)
+                                .setBuyersDeliveryNote(value);
                           },
                         ),
                       ],

@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 
 class TextFieldContainer extends StatelessWidget {
-  TextFieldContainer({
-    @required this.hintText,
-    this.textfieldWidth,
-    this.onChanged,
-    this.keyboardType,
-    this.obscureText
-  });
+  TextFieldContainer(
+      {@required this.hintText,
+      this.textfieldWidth,
+      this.onChanged,
+      this.keyboardType,
+      this.obscureText,
+      this.validator});
 
   final String hintText;
   final double textfieldWidth;
   final Function onChanged;
+  final Function validator;
   final TextInputType keyboardType;
   final bool obscureText;
 
@@ -22,7 +23,7 @@ class TextFieldContainer extends StatelessWidget {
       padding: EdgeInsets.only(top: 10),
       child: Container(
         padding: EdgeInsets.only(left: 15),
-        height: 50,
+        height: 60,
         width: textfieldWidth ?? MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             border: Border.all(
@@ -30,8 +31,9 @@ class TextFieldContainer extends StatelessWidget {
             ),
             borderRadius: BorderRadius.all(Radius.circular(4)),
             color: Colors.white),
-        child: TextField(
-          obscureText: obscureText??false,
+        child: TextFormField(
+          validator: validator,
+          obscureText: obscureText ?? false,
           cursorColor: colours.green90,
           keyboardType: keyboardType ?? null,
           onChanged: onChanged,

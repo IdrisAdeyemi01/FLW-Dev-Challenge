@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jumga_flutterwave_project/screens/login_screen.dart';
-import 'package:jumga_flutterwave_project/screens/seller_registration.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/views/seller/login_screen.dart';
+import 'package:jumga_flutterwave_project/views/seller/seller_registration.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 
 class BeASeller extends StatelessWidget {

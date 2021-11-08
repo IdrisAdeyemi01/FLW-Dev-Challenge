@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/screens/home_page.dart';
+import 'package:jumga_flutterwave_project/views/home_page.dart';
 // import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,7 +14,8 @@ class AddAProduct extends StatefulWidget {
 }
 
 class _AddAProductState extends State<AddAProduct> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKey =
+      new GlobalKey<ScaffoldMessengerState>();
   final _auth = FirebaseAuth.instance;
   final _firestore = FirebaseFirestore.instance;
 
@@ -47,7 +48,6 @@ class _AddAProductState extends State<AddAProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -171,10 +171,12 @@ class _AddAProductState extends State<AddAProduct> {
                         .productsList
                         .length,
                   });
-                  _scaffoldKey.currentState.showSnackBar(SnackBar(
-                    content: Text('Done'),
-                    duration: Duration(seconds: 3),
-                  ));
+                  _scaffoldMessengerKey.currentState.showSnackBar(
+                    SnackBar(
+                      content: Text('Done'),
+                      duration: Duration(seconds: 3),
+                    ),
+                  );
                   Navigator.push(
                     context,
                     MaterialPageRoute(

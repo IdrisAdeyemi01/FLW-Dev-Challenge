@@ -1,19 +1,28 @@
-import 'package:flutter/material.dart';
-
 class ShopOwner {
+  final String uid;
+
+  ShopOwner({this.uid});
+}
+
+class ShopOwnerData {
   final String firstName;
   final String lastName;
   final String emailAddress;
   final String phoneNumber;
-  final dynamic password;
-  final Image picture;
+  final String picture;
+  final String address;
+  final String city;
+  final String state;
+  final String country;
 
-  ShopOwner({
-    this.emailAddress,
-    this.firstName,
-    this.lastName,
-    this.password,
-    this.phoneNumber,
-    this.picture,
-  });
+  ShopOwnerData(
+      {this.emailAddress,
+      this.firstName,
+      this.lastName,
+      this.phoneNumber,
+      this.picture,
+      this.address,
+      this.city,
+      this.country,
+      this.state});
 }

@@ -3,9 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:jumga_flutterwave_project/models/product.dart';
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/screens/be_a_seller.dart';
-import 'package:jumga_flutterwave_project/widgets/product_box.dart';
-import 'package:jumga_flutterwave_project/screens/bag_page.dart';
+// import 'package:jumga_flutterwave_project/views/seller/be_a_seller.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/product_box.dart';
+import 'package:jumga_flutterwave_project/views/buyer/bag_page.dart';
+import 'package:jumga_flutterwave_project/views/seller/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -20,15 +21,16 @@ class _HomePageState extends State<HomePage> {
   Future<List<Product>> getProductsFromFirebase() async {
     List<Product> newProductList = [];
     await for (var snapshots in _firestore.collection('products').snapshots()) {
+      print(snapshots);
       for (var product in snapshots.docs) {
         final productId = product.data()['id'];
+        print(productId);
         final productDeliveryNote = product.data()['delivery_note'];
         final productDescription = product.data()['description'];
         final productPrice = product.data()['price'];
         final productName = product.data()['product_name'];
         final productReturnPolicy = product.data()['return_policy'];
         final shopName = product.data()['shop_name'];
-
         Product newProduct = Product(
             deliveryNote: productDeliveryNote,
             id: productId,
@@ -56,8 +58,8 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.only(left: 20),
           child: InkWell(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BeASeller()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Wrapper()));
             },
             child: SvgPicture.asset('images/user_profile.svg',
                 height: 20, width: 20),
@@ -109,31 +111,34 @@ class _HomePageState extends State<HomePage> {
         child: StreamBuilder<QuerySnapshot>(
             stream: _firestore.collection('products').snapshots(),
             builder: (context, snapshots) {
-              if (!snapshots.hasData) {
-                return CircularProgressIndicator();
+              if (!snapshots.hasData ||
+                  snapshots.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
               } else {
-                final productStreams = snapshots.data.docs;
-                for (var product in productStreams) {
-                  final productId = product.data()['id'];
-                  final productDeliveryNote = product.data()['delivery_note'];
-                  final productDescription = product.data()['description'];
-                  final productPrice = product.data()['price'];
-                  final productName = product.data()['product_name'];
-                  final productReturnPolicy = product.data()['return_policy'];
-                  final shopName = product.data()['shop_name'];
-                  Product newProduct = Product(
-                      deliveryNote: productDeliveryNote,
-                      id: productId,
-                      returnPolicy: productReturnPolicy,
-                      productDescription: productDescription,
-                      productPrice: productPrice,
-                      productName: productName,
-                      howMany: 1,
-                      shopName: shopName);
-
-                  Provider.of<Productdata>(context, listen: false)
-                      .addToProductList(newProduct);
-                }
+                Provider.of<Productdata>(context).productsList = [];
+                // final productStreams = snapshots.data.docs;
+                // for (var product in productStreams) {
+                //   var data = product.data() as Map<String, dynamic>;
+                //   final productId = data['id'];
+                //   final productDeliveryNote = data['delivery_note'];
+                //   final productDescription = data['description'];
+                //   final productPrice = data['price'];
+                //   final productName = data['product_name'];
+                //   final productReturnPolicy = data['return_policy'];
+                //   final shopName = data['shop_name'];
+                //   Product newProduct = Product(
+                //       deliveryNote: productDeliveryNote,
+                //       id: productId,
+                //       returnPolicy: productReturnPolicy,
+                //       productDescription: productDescription,
+                //       productPrice: productPrice,
+                //       productName: productName,
+                //       howMany: 1,
+                //       shopName: shopName);
+                //   Provider.of<Productdata>(context, listen: false)
+                //       .addToProductList(newProduct);
+                // }
+                getProductsFromFirebase();
                 print(Provider.of<Productdata>(context).productsList.length);
                 return ListView.builder(
                   addAutomaticKeepAlives: false,

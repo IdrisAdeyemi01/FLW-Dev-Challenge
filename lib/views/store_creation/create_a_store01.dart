@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
-import 'package:jumga_flutterwave_project/screens/create_a_store02.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/views/store_creation/create_a_store02.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 
 class CreateAStore01 extends StatefulWidget {
   @override

@@ -24,7 +24,7 @@ class Productdata extends ChangeNotifier {
   int shoppingAmount = 0;
   List<Product> productsList = [
     Product(
-        id: 0,
+        id: 1,
         deliveryNote: 'I go bring am come your house',
         howMany: 1,
         pictureProducts: imagesList,
@@ -36,7 +36,7 @@ class Productdata extends ChangeNotifier {
         shopName: 'Mama Tee',
         totalAmount: 5000),
     Product(
-        id: 1,
+        id: 2,
         deliveryNote: 'I go bring am come your house with bikeman',
         howMany: 1,
         pictureProducts: imagesList.sublist(1),
@@ -68,12 +68,12 @@ class Productdata extends ChangeNotifier {
   }
 
   void increaseCounter(x) {
-    productsInBag[x].increaseNumber();
+    // productsInBag[x];
     notifyListeners();
   }
 
   void decreaseCounter(x) {
-    productsInBag[x].decreaseNumber();
+    // productsInBag[x]
     notifyListeners();
   }
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
-import 'package:jumga_flutterwave_project/screens/payment_screens/pay_with_card.dart';
-import 'package:jumga_flutterwave_project/screens/payment_screens/use_bank_account.dart';
+import 'package:jumga_flutterwave_project/views/payment_screens/pay_with_card.dart';
+import 'package:jumga_flutterwave_project/views/payment_screens/use_bank_account.dart';
 
 class PaymentMethod extends StatelessWidget {
   @override

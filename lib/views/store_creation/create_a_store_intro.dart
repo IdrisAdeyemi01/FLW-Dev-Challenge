@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:jumga_flutterwave_project/screens/create_a_store01.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/views/store_creation/create_a_store01.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 
 class CreateStoreIntro extends StatelessWidget {

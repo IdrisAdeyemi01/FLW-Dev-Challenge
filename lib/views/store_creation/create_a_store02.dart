@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
-import 'package:jumga_flutterwave_project/screens/create_store_final.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/views/store_creation/create_a_store03.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 
-class CreateAStore03 extends StatefulWidget {
+class CreateAStore02 extends StatefulWidget {
   @override
-  _CreateAStore03State createState() => _CreateAStore03State();
+  _CreateAStore02State createState() => _CreateAStore02State();
 }
 
-class _CreateAStore03State extends State<CreateAStore03> {
+class _CreateAStore02State extends State<CreateAStore02> {
   @override
   Widget build(BuildContext context) {
     // Size screenSize = MediaQuery.of(context).size;
@@ -61,31 +61,31 @@ class _CreateAStore03State extends State<CreateAStore03> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Profile | Contact | Account',
+              Text('Profile | Contact',
                   style: TextStyle(fontSize: 16, color: colours.green100)),
               SizedBox(height: 50),
               Text(
-                'Bank Name',
+                'Physical Address',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              TextFieldContainer(hintText: 'United Bank for Africa'),
+              TextFieldContainer(hintText: ''),
               SizedBox(height: 30),
               Text(
-                'Account Number',
+                'Email',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              TextFieldContainer(hintText: '2021011700'),
+              TextFieldContainer(hintText: ''),
               SizedBox(height: 30),
               Text(
-                'Account Name',
+                'WhatsApp Number',
                 maxLines: 2,
                 style: TextStyle(
                   color: Colors.black,
@@ -93,17 +93,15 @@ class _CreateAStore03State extends State<CreateAStore03> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              TextFieldContainer(hintText: 'Kashimawo Tanimola'),
+              TextFieldContainer(hintText: ''),
               SizedBox(height: MediaQuery.of(context).size.height * 0.15),
               DarkGreenButton(
-                label: 'Create Store',
+                label: 'Continue',
                 onPressed: () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CreateStoreFinal(),
-                    ),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CreateAStore03()));
                 },
               ),
             ],

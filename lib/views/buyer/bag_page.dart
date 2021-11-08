@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/screens/check_out_page.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
-import 'package:jumga_flutterwave_project/widgets/bag_item_tile.dart';
+import 'package:jumga_flutterwave_project/views/buyer/check_out_page.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/bag_item_tile.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 

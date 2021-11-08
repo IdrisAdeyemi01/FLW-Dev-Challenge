@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/widgets/images_carousel.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/images_carousel.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 import 'package:provider/provider.dart';
 
 class ProductBox extends StatefulWidget {

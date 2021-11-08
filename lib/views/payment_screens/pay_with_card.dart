@@ -3,12 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutterwave/models/responses/charge_response.dart';
 import 'package:jumga_flutterwave_project/components/colors.dart' as colours;
 import 'package:jumga_flutterwave_project/models/buyers.dart';
-import 'package:jumga_flutterwave_project/models/product_data.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
-import 'package:jumga_flutterwave_project/widgets/text_field_container.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/text_field_container.dart';
 // import 'package:flutterwave/flutterwave.dart';
 import 'package:provider/provider.dart';
-import 'package:http/http.dart';
+
 class PayWithCard extends StatefulWidget {
   @override
   _PayWithCardState createState() => _PayWithCardState();
@@ -22,11 +21,10 @@ class _PayWithCardState extends State<PayWithCard> {
   String currency = 'NGN';
   String txRef = 'ABCXYZ';
 
-  
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    int amount = Provider.of<Productdata>(context).finalAmount();
+    // int amount = Provider.of<Productdata>(context).finalAmount();
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

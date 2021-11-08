@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:jumga_flutterwave_project/widgets/dark_green_button.dart';
+import 'package:jumga_flutterwave_project/custom_widgets/dark_green_button.dart';
 
 class CreateStoreFinal extends StatelessWidget {
   @override
